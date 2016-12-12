@@ -1,0 +1,5 @@
+====================
+plomino.captchacore
+====================
+
+User documentation
