@@ -2,7 +2,6 @@
 <metadata>
   <version>1000</version>
   <dependencies>
-    <dependency>profile-Products.CMFPlomino:default</dependency>
     <dependency>profile-quintagroup.captcha.core:default</dependency>    
   </dependencies>
 </metadata>

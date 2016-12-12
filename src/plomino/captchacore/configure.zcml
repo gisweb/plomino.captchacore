@@ -12,21 +12,6 @@
 
   <include package=".browser" />
 
-  <include package="Products.CMFPlomino.fields"/>
-  
-  <adapter
-      for="Products.CMFPlomino.interfaces.IPlominoField"
-      provides=".captchacore.ICaptchaCoreField"
-      factory=".captchacore.CaptchaCoreField"
-    />
-
-  <browser:page
-      name="captchasettings"
-      for="Products.CMFPlomino.interfaces.IPlominoField"
-      class=".captchacore.SettingForm"
-      permission="plomino.DESIGN_PERMISSION"
-      />
-
   <genericsetup:registerProfile
       name="default"
       title="plomino.captchacore"
