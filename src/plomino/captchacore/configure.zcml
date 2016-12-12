@@ -3,6 +3,7 @@
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="plomino.captchacore">
 
   <includeDependencies package="." />
@@ -11,6 +12,20 @@
 
   <include package=".browser" />
 
+  <include package="Products.CMFPlomino.fields"/>
+  
+  <adapter
+      for="Products.CMFPlomino.interfaces.IPlominoField"
+      provides=".captchacore.ICaptchaCoreField"
+      factory=".captchacore.CaptchaCoreField"
+    />
+
+  <browser:page
+      name="captchasettings"
+      for="Products.CMFPlomino.interfaces.IPlominoField"
+      class=".captchacore.SettingForm"
+      permission="plomino.DESIGN_PERMISSION"
+      />
 
   <genericsetup:registerProfile
       name="default"
