@@ -15,11 +15,6 @@ from zope.formlib import form
 from zope.interface import implements
 from zope import component
 from zope.pagetemplate.pagetemplatefile import PageTemplateFile
-from zope.schema import getFields, Choice, TextLine
-from zope.schema.vocabulary import SimpleVocabulary
-
-# CMF / Archetypes / Plone
-from Products.CMFPlone.utils import normalizeString
 
 # Plomino
 from Products.CMFPlomino.fields.base import IBaseField, BaseField, BaseForm
@@ -28,13 +23,10 @@ from Products.CMFPlomino.fields.dictionaryproperty import DictionaryProperty
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 
+
 class ICaptchaCoreField(IBaseField):
     """ Captcha core field schema
     """
-    size = TextLine(
-            title=u'Size',
-            description=u'Length or rows (depending on the widget)',
-            required=False)
 
 class CaptchaCoreField(BaseField):
     """
@@ -102,3 +94,4 @@ class SettingForm(BaseForm):
     """
     """
     form_fields = form.Fields(ICaptchaCoreField)
+
