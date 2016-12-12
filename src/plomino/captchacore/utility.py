@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+from Products.CMFCore.utils import getToolByName
+from DateTime import DateTime
+
 def verifyCaptcha(context):
     """
     da mettere in un campo plomino dedicato con il relativo template
